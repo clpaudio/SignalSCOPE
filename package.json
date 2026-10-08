@@ -1,0 +1,39 @@
+{
+  "name": "stage-scope",
+  "version": "1.0.0",
+  "description": "Pro Audio Network Audit App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.clp.stagescope",
+    "productName": "Stage Scope",
+    "mac": {
+      "target": ["dmg", "dir"]
+    },
+    "files": [
+      "main.js",
+      "server.js",
+      "public/**/*",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "public",
+        "to": "public"
+      }
+    ]
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "net-snmp": "^3.5.0",
+    "socket.io": "^4.7.5",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^24.13.3"
+  }
+}
